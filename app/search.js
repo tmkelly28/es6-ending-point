@@ -21,6 +21,10 @@ function cycleEvents (it, schedule, done) {
     .then(response => {
       if (response.answer === 'y') schedule.add(response.event);
       cycleEvents(it, schedule, done);
+    })
+    .catch(err => {
+      console.error(err);
+      cycleEvents(it, schedule, done);
     });
 }
 

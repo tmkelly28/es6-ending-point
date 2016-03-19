@@ -16,7 +16,7 @@ export default class Schedule {
     console.log('Your schedule: \n');
     for (let event of this.schedule) {
       console.log(`
-      ${event.id}: ${new Date(event.datetime)}
+      ${event.artists[0].name}: ${new Date(event.datetime)}
       ${event.venue.name} ${event.venue.city}, ${event.venue.region}
       `);
     }
