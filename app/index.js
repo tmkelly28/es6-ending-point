@@ -7,8 +7,7 @@ import Schedule from './schedule';
 function bootstrap () {
   console.log("Welcome to ConcertGoer!");
   Schedule.load()
-    .then(events => {
-      const schedule = new Schedule(events);
+    .then(schedule => {
       schedule.log();
       main(schedule);
     })

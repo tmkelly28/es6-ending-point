@@ -35,7 +35,7 @@ export default class Schedule {
     return new Promise((resolve, reject) => {
       fs.readFile('./schedule.json', 'utf8', (error, data) => {
         if (error) reject(error);
-        data ? resolve(JSON.parse(data)) : resolve([]);
+        data ? resolve(new Schedule(JSON.parse(data))) : resolve(new Schedule());
       });
     });
   }
